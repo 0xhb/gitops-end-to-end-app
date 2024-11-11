@@ -1,0 +1,23 @@
+apiVersion: apps/v1  # Fixed version from 'vl' to 'v1'
+kind: Deployment
+metadata:
+  name: complete-production-e2e-deployment  # Removed extra dashes and fixed spelling
+spec:
+  replicas: 2
+  selector:
+    matchLabels:  # Fixed 'matchLabets' typo
+      app: complete-production-e2e-app  # Consistent label spelling
+  template:
+    metadata:
+      labels:
+        app: complete-production-e2e-app  # Consistent label spelling
+    spec:
+      containers:
+        - name: complete-production-e2e-app  # Consistent naming
+          image: boustta/e-to-epipeline:1.0.0-22
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
