@@ -4,7 +4,7 @@ metadata:
   name: complete-production-e2e-service
 spec:
   selector:
-    app: complete—prodcution—e2e—app
+    app: complete-prodcution-e2e-app
   ports:
     - protocol: TCP
       port: 80
